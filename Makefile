@@ -1,5 +1,5 @@
 all: MPU6050.cpp
-	g++ -fPIC -c MPU6050.cpp -o MPU6050.o
+	g++ -fPIC -li2c -c MPU6050.cpp -o MPU6050.o
 	g++ -shared -o libMPU6050.so MPU6050.o
 	install -m 755 -p libMPU6050.so /usr/lib/
 	install -m 644 -p MPU6050.h /usr/include/
@@ -12,5 +12,5 @@ clean:
 	rm -f Example
 
 example:
-	g++ Example.cpp -o Example -lMPU6050 -pthread
+	g++ Example.cpp -o Example -lMPU6050 -pthread -li2c
 	./Example

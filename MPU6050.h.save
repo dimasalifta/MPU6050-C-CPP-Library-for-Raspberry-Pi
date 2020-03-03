@@ -41,20 +41,12 @@
 #include <sys/ioctl.h>
 #include <sys/types.h>
 #include <time.h>
-//#include <linux/i2c-dev.h>
+#include <linux/i2c-dev.h>
 #include <cmath>
 #include <thread>
 
 
-extern "C" {
-    #include <linux/i2c.h>
-        #include <linux/i2c-dev.h>
-        #include <i2c/smbus.h>
-}
-
-
-
-#define _POSIX_C_SOURCE 200809L //Used for calculating time
+MU _POSIX_C_SOURCE 200809L //Used for calculating time
 
 #define TAU 0.05 //Complementary filter percentage
 #define RAD_T_DEG 57.29577951308 //Radians to degrees (180/PI)
